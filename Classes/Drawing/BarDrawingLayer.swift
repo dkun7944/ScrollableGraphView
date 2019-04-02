@@ -35,7 +35,7 @@ internal class BarDrawingLayer: ScrollableGraphViewDrawingLayer {
         
         let barPath: UIBezierPath = {
             if shouldRoundCorners {
-                return UIBezierPath(roundedRect: rect, cornerRadius: barWidthOffset)
+                return UIBezierPath(roundedRect: rect, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 4.0, height: 4.0))
             } else {
                 return UIBezierPath(rect: rect)
             }
